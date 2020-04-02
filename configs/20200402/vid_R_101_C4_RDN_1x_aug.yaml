@@ -7,12 +7,16 @@ MODEL:
         ENABLE: True
         ADVANCED_STAGE: 1
   META_ARCHITECTURE: "GeneralizedRCNNRDN"
-  WEIGHT: "models/RDN_base_R_101.pth"
+  # WEIGHT: "models/RDN_base_R_101.pth"
+  WEIGHT: "./outputs/20200328/RDN_base_1x/model_final.pth"
   BACKBONE:
     CONV_BODY: "R-101-C4"
   ROI_BOX_HEAD:
     FEATURE_EXTRACTOR: "RDNFeatureExtractor"
     PREDICTOR: "FPNPredictor"
+INPUT:
+  WITH_AUGMENTATION: True
 DATASETS:
   TRAIN: ("DET_train_30classes", "VID_train_15frames")
   TEST: ("VID_val_videos",)
+OUTPUT_DIR: "./outputs/20200402/RDN_1X_aug"

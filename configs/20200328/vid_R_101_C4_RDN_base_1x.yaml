@@ -1,18 +1,19 @@
 MODEL:
   VID:
     METHOD: "rdn"
-    IGNORE: True
     ROI_BOX_HEAD:
       ATTENTION:
         ENABLE: True
-        ADVANCED_STAGE: 1
   META_ARCHITECTURE: "GeneralizedRCNNRDN"
-  WEIGHT: "models/RDN_base_R_101.pth"
+  WEIGHT: "/data7/djiajun/video_detection/pretrained_models/R-101.pkl"
   BACKBONE:
     CONV_BODY: "R-101-C4"
   ROI_BOX_HEAD:
     FEATURE_EXTRACTOR: "RDNFeatureExtractor"
     PREDICTOR: "FPNPredictor"
+INPUT:
+  WITH_AUGMENTATION: True
 DATASETS:
   TRAIN: ("DET_train_30classes", "VID_train_15frames")
   TEST: ("VID_val_videos",)
+OUTPUT_DIR: "./outputs/20200328/RDN_base_1x"

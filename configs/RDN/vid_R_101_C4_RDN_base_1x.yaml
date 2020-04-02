@@ -11,6 +11,13 @@ MODEL:
   ROI_BOX_HEAD:
     FEATURE_EXTRACTOR: "RDNFeatureExtractor"
     PREDICTOR: "FPNPredictor"
+SOLVER:
+  BASE_LR: 0.001
+  WEIGHT_DECAY: 0.0001
+  STEPS: (80000, )
+  MAX_ITER: 120000
+  IMS_PER_BATCH: 4
+  WARMUP_ITERS: 500
 DATASETS:
   TRAIN: ("DET_train_30classes", "VID_train_15frames")
   TEST: ("VID_val_videos",)

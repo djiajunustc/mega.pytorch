@@ -4,7 +4,8 @@ Implements the Generalized R-CNN framework
 """
 import time
 
-from PIL import Image
+# from PIL import Image
+import cv2
 from collections import deque
 
 import torch
@@ -153,7 +154,8 @@ class GeneralizedRCNNRDN(nn.Module):
             while len(self.feats) < self.all_frame_interval:
                 self.end_id = min(self.end_id + 1, self.seg_len - 1)
                 end_filename = infos["pattern"] % self.end_id
-                end_image = Image.open(infos["img_dir"] % end_filename).convert("RGB")
+                end_image = cv2.imread(infos["img_dir"] % end_filename)
+                # end_image = Image.open(infos["img_dir"] % end_filename).convert("RGB")
 
                 end_image, _ = infos["transforms"](end_image, None)
                 end_image = end_image.view(1, *end_image.shape).to(self.device)

@@ -150,13 +150,17 @@ class DatasetCatalog(object):
 
         ##############################################
         "DET_train_30classes": {
-            "img_dir": "ILSVRC2015/Data/DET",
-            "anno_path": "ILSVRC2015/Annotations/DET",
+            # "img_dir": "ILSVRC2015/Data/DET",
+            # "anno_path": "ILSVRC2015/Annotations/DET",
+            "img_dir": "/data7/djiajun/datasets/video_detection/ILSVRC/Data/DET",
+            "anno_path": "/data7/djiajun/datasets/video_detection/ILSVRC/Annotations/DET",
             "img_index": "ILSVRC2015/ImageSets/DET_train_30classes.txt"
         },
         "VID_train_15frames": {
-            "img_dir": "ILSVRC2015/Data/VID",
-            "anno_path": "ILSVRC2015/Annotations/VID",
+            # "img_dir": "ILSVRC2015/Data/VID",
+            # "anno_path": "ILSVRC2015/Annotations/VID",
+            "img_dir": "/data7/djiajun/datasets/video_detection/ILSVRC/Data/VID",
+            "anno_path": "/data7/djiajun/datasets/video_detection/ILSVRC/Annotations/VID",
             "img_index": "ILSVRC2015/ImageSets/VID_train_15frames.txt"
         },
         "VID_train_every10frames": {
@@ -170,8 +174,10 @@ class DatasetCatalog(object):
             "img_index": "ILSVRC2015/ImageSets/VID_val_frames.txt"
         },
         "VID_val_videos": {
-            "img_dir": "ILSVRC2015/Data/VID",
-            "anno_path": "ILSVRC2015/Annotations/VID",
+            # "img_dir": "ILSVRC2015/Data/VID",
+            # "anno_path": "ILSVRC2015/Annotations/VID",
+            "img_dir": "/data7/djiajun/datasets/video_detection/ILSVRC/Data/VID",
+            "anno_path": "/data7/djiajun/datasets/video_detection/ILSVRC/Annotations/VID",
             "img_index": "ILSVRC2015/ImageSets/VID_val_videos.txt"
         }
     }

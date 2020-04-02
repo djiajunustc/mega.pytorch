@@ -33,3 +33,5 @@ dist/
 
 # project dirs
 /models
+outputs
+scripts
